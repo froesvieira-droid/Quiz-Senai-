@@ -236,8 +236,12 @@ Gere uma nova questão alternativa com novos valores/novo texto, 5 alternativas 
   }
 });
 
-const PORT = Number(process.env.PORT) || 3000;
+app.get("/api/health", (_req, res) => {
+  res.status(200).json({ status: "ok", timestamp: new Date().toISOString() });
+});
+
 const isProduction = process.env.NODE_ENV === "production";
+const PORT = isProduction ? Number(process.env.PORT) || 8080 : 3000;
 
 async function startServer() {
   if (!isProduction) {
@@ -255,7 +259,7 @@ async function startServer() {
   }
 
   app.listen(PORT, "0.0.0.0", () => {
-    console.log(`Server listening on port ${PORT}`);
+    console.log(`Server listening on port ${PORT} (mode: ${isProduction ? "production" : "development"})`);
   });
 }
 
