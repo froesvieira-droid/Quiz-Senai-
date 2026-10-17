@@ -1,0 +1,7 @@
+{
+  "name": "Quiz SENAI - CGE 2233 & Gerador IA",
+  "description": "Simulado completo do Processo Seletivo SENAI CGE 2233 com questões reais de Português, Matemática e Ciências, além de gerador de novas questões com Inteligência Artificial.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
